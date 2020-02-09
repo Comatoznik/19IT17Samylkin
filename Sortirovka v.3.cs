@@ -47,17 +47,17 @@ namespace ConsoleApp4
                 }
             } // поиск максимального значения в массиве
 
-            Console.WriteLine("Сгенерированный массив:");
+            Console.WriteLine("Сгенерированный массив:"); 
             foreach (double x in mass)
             {
                 Console.Write(x + " ");
-            } // вывод массива на экран
+            } // вывод сгенерированного массива на экран
             
-            QuickSorting.sorting(mass, 0, mass.Length - 1); // обращаемся к классу QuickSorting, который сортирует массив, затем выводим массив на экран
-            Console.WriteLine("\nОтсортированный массив:");
+            QuickSorting.sorting(mass, 0, mass.Length - 1); // обращаемся к классу QuickSorting, который сортирует массив
+            Console.WriteLine("\nОтсортированный массив:"); 
             foreach (double x in mass)
             {
-                Console.Write(x + " ");
+                Console.Write(x + " "); // вывод отсортированного массива
             }
             
             Console.ReadLine();
