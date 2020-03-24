@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -16,14 +9,11 @@ namespace WindowsFormsApp1
         public int temp;
         int a;
         double b;
-        public Form1()
-        {
-            InitializeComponent();
-
-        }
+        public Form1() => InitializeComponent();
 
         private void generation_Click(object sender, EventArgs e)
-        { try
+        {
+            try
             {
                 {
                     a = int.Parse(textBox1.Text);
@@ -35,7 +25,7 @@ namespace WindowsFormsApp1
             }
             catch (FormatException)
             {
-                textBox1.Text = "Неверный формат ввода!";
+                label1.Text = "Неверный формат ввода!";
             }
 
 
@@ -52,7 +42,7 @@ namespace WindowsFormsApp1
             }
             catch (FormatException)
             {
-                textBox1.Text = "Неверный формат ввода!";
+                label1.Text = "Неверный формат ввода!";
             }
 
         }
@@ -69,7 +59,7 @@ namespace WindowsFormsApp1
             }
             catch (FormatException)
             {
-                textBox1.Text = "Неверный формат ввода!";
+                label1.Text = "Неверный формат ввода!";
             }
         }
 
@@ -85,7 +75,7 @@ namespace WindowsFormsApp1
             }
             catch (FormatException)
             {
-                textBox1.Text = "Неверный формат ввода!";
+                label1.Text = "Неверный формат ввода!";
             }
         }
 
@@ -162,10 +152,10 @@ namespace WindowsFormsApp1
 
         private void calculate()
         {
-                switch (temp)
-                {
+            switch (temp)
+            {
 
-                    case 1:
+                case 1:
                     try
                     {
                         b = a * int.Parse(textBox1.Text);
@@ -173,50 +163,50 @@ namespace WindowsFormsApp1
                     }
                     catch (FormatException)
                     {
-                        textBox1.Text = "Неверный формат ввода!";
+                        label1.Text = "Неверный формат ввода!";
                     }
-                    
+
                     break;
-                    case 2:
+                case 2:
                     try
                     {
                         b = a + int.Parse(textBox1.Text);
                         textBox1.Text = b.ToString();
                     }
-                    catch(FormatException)
+                    catch (FormatException)
                     {
-                        textBox1.Text = "Неверный формат ввода!";
+                        label1.Text = "Неверный формат ввода!";
                     }
-                        break;
-                    case 3:
+                    break;
+                case 3:
                     try
                     {
                         b = a - int.Parse(textBox1.Text);
                         textBox1.Text = b.ToString();
                     }
-                    catch(FormatException)
+                    catch (FormatException)
                     {
-                        textBox1.Text = "Неверный формат ввода!";
+                        label1.Text = "Неверный формат ввода!";
                     }
                     break;
-                    
-                    case 4:
+
+                case 4:
                     try
                     {
                         b = a / int.Parse(textBox1.Text);
                         textBox1.Text = b.ToString();
                     }
-                    catch(DivideByZeroException)
+                    catch (DivideByZeroException)
                     {
-                     
+
                     }
-                        break;
+                    break;
 
-                    default:
-                        break;
+                default:
+                    break;
 
-                }
             }
+        }
 
         private void sqrt_Click(object sender, EventArgs e)
         {
@@ -231,13 +221,14 @@ namespace WindowsFormsApp1
             }
             catch (FormatException)
             {
-                textBox1.Text = "Неверный формат ввода!";
+                label1.Text = "Неверный формат ввода!";
             }
 
         }
 
         private void sin_Click(object sender, EventArgs e)
-        { try
+        {
+            try
             {
                 a = int.Parse(textBox1.Text);
                 b = Math.Sin(a);
@@ -245,9 +236,9 @@ namespace WindowsFormsApp1
                 label1.Text = "sin";
                 F = true;
             }
-            catch(FormatException)
+            catch (FormatException)
             {
-                textBox1.Text = "Неверный формат ввода!";
+                label1.Text = "Неверный формат ввода!";
             }
         }
 
@@ -263,7 +254,7 @@ namespace WindowsFormsApp1
             }
             catch (FormatException)
             {
-                textBox1.Text = "Неверный формат ввода!";
+                label1.Text = "Неверный формат ввода!";
             }
         }
 
@@ -277,9 +268,9 @@ namespace WindowsFormsApp1
                 label1.Text = "tg";
                 F = true;
             }
-            catch(FormatException)
+            catch (FormatException)
             {
-                textBox1.Text = "Неверный формат ввода!";
+                label1.Text = "Неверный формат ввода!";
             }
         }
 
@@ -293,9 +284,9 @@ namespace WindowsFormsApp1
                 label1.Text = "log(10)";
                 F = true;
             }
-            catch(FormatException)
+            catch (FormatException)
             {
-                textBox1.Text = "Неверный формат ввода!";
+                label1.Text = "Неверный формат ввода!";
             }
         }
 
@@ -311,7 +302,7 @@ namespace WindowsFormsApp1
             }
             catch
             {
-                textBox1.Text = "Неверный формат ввода!";
+                label1.Text = "Неверный формат ввода!";
             }
         }
 
@@ -325,9 +316,9 @@ namespace WindowsFormsApp1
                 label1.Text = "exp";
                 F = true;
             }
-            catch(FormatException)
+            catch (FormatException)
             {
-                textBox1.Text = "Неверный формат ввода!"; 
+                label1.Text = "Неверный формат ввода!";
             }
         }
 

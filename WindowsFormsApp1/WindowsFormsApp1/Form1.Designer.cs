@@ -249,7 +249,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Window;
             this.label1.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(257, 149);
+            this.label1.Location = new System.Drawing.Point(27, 144);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 40);
             this.label1.TabIndex = 53;
@@ -304,7 +304,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Простой";
             this.tabPage1.UseVisualStyleBackColor = true;
-
             // 
             // button19
             // 
@@ -485,7 +484,6 @@
             this.tabPage3.Size = new System.Drawing.Size(515, 557);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Конвертер";
-
             // 
             // Form1
             // 
