@@ -48,6 +48,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.button19 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
@@ -248,10 +252,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Window;
-            this.label1.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(27, 144);
+            this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(27, 177);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 40);
+            this.label1.Size = new System.Drawing.Size(0, 35);
             this.label1.TabIndex = 53;
             this.label1.UseCompatibleTextRendering = true;
             // 
@@ -272,6 +276,10 @@
             // 
             this.tabPage1.AllowDrop = true;
             this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.radioButton7);
+            this.tabPage1.Controls.Add(this.radioButton6);
+            this.tabPage1.Controls.Add(this.radioButton5);
+            this.tabPage1.Controls.Add(this.radioButton4);
             this.tabPage1.Controls.Add(this.button11);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.button9);
@@ -304,6 +312,54 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Простой";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Location = new System.Drawing.Point(372, 144);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(87, 17);
+            this.radioButton7.TabIndex = 65;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Text = "Десятичная";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            this.radioButton7.CheckedChanged += new System.EventHandler(this.desyatichnaya_CheckedChanged);
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(231, 144);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(135, 17);
+            this.radioButton6.TabIndex = 64;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "Шестнадцатиричная";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.shestnadtsaterichnaya_CheckedChanged);
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(122, 144);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(103, 17);
+            this.radioButton5.TabIndex = 63;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "Восьмеричная";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.vosmerichnaya_CheckedChanged);
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(27, 144);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(78, 17);
+            this.radioButton4.TabIndex = 62;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Двоичная";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.dvoichnaya_CheckedChanged);
             // 
             // button19
             // 
@@ -488,10 +544,11 @@
             // Form1
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(653, 759);
+            this.ClientSize = new System.Drawing.Size(511, 584);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Калькулятор Самылкина";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -540,6 +597,10 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.RadioButton radioButton7;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButton4;
     }
 }
 

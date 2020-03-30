@@ -9,6 +9,7 @@ namespace WindowsFormsApp1
         public int temp;
         int a;
         double b;
+        int c;
         public Form1() => InitializeComponent();
 
         private void generation_Click(object sender, EventArgs e)
@@ -322,5 +323,70 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void dvoichnaya_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                c = int.Parse(textBox1.Text);
+                string result = Convert.ToString((int)c, 2);
+                textBox1.Text = result;
+            }
+            catch(FormatException)
+            {
+                label1.Text = ("Число должно быть больше нуля!");
+            }
+        }
+
+        private void vosmerichnaya_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                c = int.Parse(textBox1.Text);
+                string result = Convert.ToString((int)c, 8);
+                textBox1.Text = result;
+            }
+            catch (FormatException)
+            {
+                label1.Text = ("Число должно быть больше нуля!");
+            }
+
+        }
+
+        private void shestnadtsaterichnaya_CheckedChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                c = int.Parse(textBox1.Text);
+                string result = Convert.ToString((int)c, 16);
+                textBox1.Text = result;
+            }
+            catch (FormatException)
+            {
+                label1.Text = ("Число должно быть больше нуля!");
+            }
+
+
+        }
+
+        private void desyatichnaya_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                c = int.Parse(textBox1.Text);
+                string result = Convert.ToString((int)c, 10);
+                textBox1.Text = result;
+            }
+            catch (FormatException)
+            {
+                label1.Text = ("Число должно быть больше нуля!");
+            }
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
