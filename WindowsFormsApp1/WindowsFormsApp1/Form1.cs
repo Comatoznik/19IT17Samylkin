@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
+
 
 namespace WindowsFormsApp1
 {
@@ -331,7 +333,7 @@ namespace WindowsFormsApp1
                 string result = Convert.ToString((int)c, 2);
                 textBox1.Text = result;
             }
-            catch(FormatException)
+            catch (FormatException)
             {
                 label1.Text = ("Число должно быть больше нуля!");
             }
@@ -387,6 +389,67 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            string a = textBox2.Text.Length.ToString();
+            label3.Text = $"Длина строки:{a}";
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ToUpper_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox6.Text = textBox2.Text.ToUpper();
+        }
+
+        private void ToLower_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox6.Text = textBox2.Text.ToLower();
+        }
+
+        private void stats_CheckedChanged(object sender, EventArgs e)
+        {
+            { int vowel = 0;
+                int consonant = 0;
+                List<Char> vowels = new List<char>() {'у','е','ы','а','о','э','я','и','ё','ю' };
+                List<Char> consonants = new List<char>()
+                { 'ц', 'к', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ф', 'в', 'п'
+                , 'р', 'л', 'д', 'ж', 'ч', 'с', 'м', 'т', 'б' };
+                foreach (char chr in textBox2.Text)
+                {
+                    if (vowels.Contains(chr)) 
+                    {
+                        vowel++;
+                    }
+                    if (consonants.Contains(chr)) 
+                    {
+                        consonant++;
+                    }
+                }
+                string input = textBox2.Text;
+                int Letter = 0;
+                int Digit = 0;
+                for (int i = 0; i < input.Length; i++)
+                {
+
+                    if (char.IsLetter(input[i]))
+                        Letter++;
+                    if (char.IsDigit(input[i]))
+                        Digit++;
+                }
+                label6.Text = ("Букв : " + Letter.ToString());
+                label7.Text = ("Цифр : " + Digit.ToString());
+                label8.Text = ("Строк : " + textBox2.Lines.Length);
+                label9.Text = ("Гласных : " + vowel.ToString());
+                label10.Text = ("Согласных : " + consonant.ToString());
+
+
+            }
         }
     }
 }
