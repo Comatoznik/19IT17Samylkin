@@ -414,19 +414,20 @@ namespace WindowsFormsApp1
 
         private void stats_CheckedChanged(object sender, EventArgs e)
         {
-            { int vowel = 0;
+            {
+                int vowel = 0;
                 int consonant = 0;
-                List<Char> vowels = new List<char>() {'у','е','ы','а','о','э','я','и','ё','ю' };
+                List<Char> vowels = new List<char>() { 'у', 'е', 'ы', 'а', 'о', 'э', 'я', 'и', 'ё', 'ю' };
                 List<Char> consonants = new List<char>()
                 { 'ц', 'к', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ф', 'в', 'п'
                 , 'р', 'л', 'д', 'ж', 'ч', 'с', 'м', 'т', 'б' };
                 foreach (char chr in textBox2.Text)
                 {
-                    if (vowels.Contains(chr)) 
+                    if (vowels.Contains(chr))
                     {
                         vowel++;
                     }
-                    if (consonants.Contains(chr)) 
+                    if (consonants.Contains(chr))
                     {
                         consonant++;
                     }
@@ -450,6 +451,59 @@ namespace WindowsFormsApp1
 
 
             }
+        }
+
+        private void radioButton11_CheckedChanged(object sender, EventArgs e)
+        {// нахождение ошибок в строке
+            string text = textBox2.Text;
+            string[] trues = new string[] { "жи", "ши", "ча", "ща", "чу", "щу" };
+            string[] errors = new string[] { "жы", "шы", "чя", "щя", "чю", "щю" };
+            for (int i = 0; i < textBox2.Text.Length; i++)// перебираем введенные данные
+            {
+                for (int j = 0; j < errors.Length; j++) // перебираем ошибки
+                {
+                    try
+                    {
+                        if (textBox2.Text.Contains(errors[j])) // проверка на наличие ошибок
+                            text = textBox2.Text.Replace(errors[j], trues[j]); // если они есть, заменяем их
+                        textBox6.Text = text;
+                    }
+                    catch(FormatException)
+                    {
+                        MessageBox.Show("Строка не может быть пустой!");
+                    }
+
+                }
+            }
+        }
+
+        private void radioButton10_CheckedChanged(object sender, EventArgs e)
+        {
+            string text = textBox2.Text;
+            string[] str = new string[] { "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять", "десять" };
+            string[] num = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
+            for (int i = 0; i < textBox2.Text.Length; i++)
+            {
+                for (int j = 0; j < str.Length; j++)
+                    try
+                    {
+                        if (textBox2.Text.Contains(str[j]))
+                            text = textBox2.Text.Replace(str[j], num[j]);
+                        textBox6.Text = text;
+                    }
+                    catch(FormatException)
+                    {
+                        MessageBox.Show("Строка не может быть пустой!");
+                    }
+                // преобразование слов в цифры
+            }
+        }
+
+        private void radioButton9_CheckedChanged(object sender, EventArgs e)
+        {
+            string text = textBox2.Text;
+            text = textBox2.Text.Substring(5); // извлечение подстроки
+            textBox6.Text = text;
         }
     }
 }
