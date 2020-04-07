@@ -1,6 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.IO;
+using System.Diagnostics;
+
 
 
 namespace WindowsFormsApp1
@@ -468,7 +474,7 @@ namespace WindowsFormsApp1
                             text = textBox2.Text.Replace(errors[j], trues[j]); // если они есть, заменяем их
                         textBox6.Text = text;
                     }
-                    catch(FormatException)
+                    catch (FormatException)
                     {
                         MessageBox.Show("Строка не может быть пустой!");
                     }
@@ -491,7 +497,7 @@ namespace WindowsFormsApp1
                             text = textBox2.Text.Replace(str[j], num[j]);
                         textBox6.Text = text;
                     }
-                    catch(FormatException)
+                    catch (FormatException)
                     {
                         MessageBox.Show("Строка не может быть пустой!");
                     }
@@ -504,6 +510,37 @@ namespace WindowsFormsApp1
             string text = textBox2.Text;
             text = textBox2.Text.Substring(5); // извлечение подстроки
             textBox6.Text = text;
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            int Dollar = 75;
+            int Euro = 88;
+            int Funt = 94;
+            int x;
+            int z;
+            if (this.checkBox4.Checked)
+            {
+                x = Convert.ToInt32(textBox4.Text);
+                z = Dollar * x;
+                textBox3.Text = z.ToString();
+            }
+
+
+            else if (this.checkBox5.Checked)
+            {
+                x = Convert.ToInt32(textBox4.Text);
+                z = Euro * x;
+                textBox3.Text = z.ToString();
+
+            }
+
+            else if (this.checkBox2.Checked)
+            {
+                x = Convert.ToInt32(textBox4.Text);
+                z = Funt * x;
+                textBox3.Text = z.ToString();
+            }
         }
     }
 }
