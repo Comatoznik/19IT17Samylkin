@@ -514,33 +514,41 @@ namespace WindowsFormsApp1
 
         private void button24_Click(object sender, EventArgs e)
         {
-            int Dollar = 75;
-            int Euro = 88;
-            int Funt = 94;
-            int x;
-            int z;
-            if (this.checkBox4.Checked)
-            {
-                x = Convert.ToInt32(textBox4.Text);
-                z = Dollar * x;
-                textBox3.Text = z.ToString();
-            }
+            int input = int.Parse(textBox3.Text);
+            if (listBox2.SelectedIndex == 0)
+                label16.Text = 10.ToString();
+            if (listBox2.SelectedIndex == 1)
+                label16.Text = 6.ToString();
+            if (listBox2.SelectedIndex == 2)
+                label16.Text = 3.ToString();
+            if (listBox2.SelectedIndex == 3)
+                label16.Text = 15.ToString();
+            if (listBox2.SelectedIndex == 4)
+                label16.Text = 20.ToString();
+            if (listBox2.SelectedIndex == 5)
+                label16.Text = 0.ToString();
+            if (listBox1.SelectedIndex == 0)
+                label15.Text = 25.ToString();
+            if (listBox1.SelectedIndex == 1)
+                label15.Text = 42.ToString();
+            if (listBox1.SelectedIndex == 2)
+                label15.Text = 47.ToString();
+            if (listBox1.SelectedIndex == 3)
+                label15.Text = 45.ToString();
+            int fuel = Convert.ToInt32(label15.Text);
+            int ras = int.Parse(label16.Text);
+            textBox4.Text = ((input / ras) * fuel).ToString();
+        }
 
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-            else if (this.checkBox5.Checked)
-            {
-                x = Convert.ToInt32(textBox4.Text);
-                z = Euro * x;
-                textBox3.Text = z.ToString();
+        }
 
-            }
-
-            else if (this.checkBox2.Checked)
-            {
-                x = Convert.ToInt32(textBox4.Text);
-                z = Funt * x;
-                textBox3.Text = z.ToString();
-            }
+        private void label13_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex == 1)
+                label13.Text = label13.Text + "25";
         }
     }
 }
