@@ -514,7 +514,6 @@ namespace WindowsFormsApp1
 
         private void button24_Click(object sender, EventArgs e)
         {
-            int input = int.Parse(textBox3.Text);
             if (listBox2.SelectedIndex == 0)
                 label16.Text = 10.ToString();
             if (listBox2.SelectedIndex == 1)
@@ -528,27 +527,41 @@ namespace WindowsFormsApp1
             if (listBox2.SelectedIndex == 5)
                 label16.Text = 0.ToString();
             if (listBox1.SelectedIndex == 0)
-                label15.Text = 25.ToString();
+                label15.Text = 32.70.ToString();
             if (listBox1.SelectedIndex == 1)
-                label15.Text = 42.ToString();
+                label15.Text = 42.20.ToString();
             if (listBox1.SelectedIndex == 2)
-                label15.Text = 47.ToString();
+                label15.Text = 48.90.ToString();
             if (listBox1.SelectedIndex == 3)
-                label15.Text = 45.ToString();
-            int fuel = Convert.ToInt32(label15.Text);
-            int ras = int.Parse(label16.Text);
-            textBox4.Text = ((input / ras) * fuel).ToString();
+                label15.Text = 45.50.ToString();
+            try
+            {
+                int input = int.Parse(textBox3.Text);
+                double fuel = Convert.ToDouble(label15.Text);
+                double ras = double.Parse(label16.Text);
+
+
+                if (checkBox1.Checked)
+                    ras = ras * 0.7;
+                if (checkBox2.Checked)
+                    ras = ras * 1.20;
+                textBox4.Text = Math.Round((input / ras) * fuel).ToString();
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("Введенная строка имела неверный формат");
+            }
         }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void clear_Click_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-            if (listBox1.SelectedIndex == 1)
-                label13.Text = label13.Text + "25";
+            textBox3.Clear();
+            textBox4.Clear();
+            label15.Text = "";
+            label16.Text = "";
+            checkBox1.Checked = false;
+            checkBox2.Checked = false;
+            listBox1.SelectedItem = default;
+            listBox2.SelectedItem = default;
         }
     }
 }
