@@ -545,7 +545,7 @@ namespace WindowsFormsApp1
                     ras = ras * 0.7;
                 if (checkBox2.Checked)
                     ras = ras * 1.20;
-                textBox4.Text = Math.Round((input / ras) * fuel).ToString();
+                textBox4.Text = Math.Round((ras / input) * fuel).ToString();
             }
             catch(FormatException)
             {
