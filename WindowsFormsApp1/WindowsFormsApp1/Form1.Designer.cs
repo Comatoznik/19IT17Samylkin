@@ -79,6 +79,8 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.clear = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -93,8 +95,8 @@
             this.button24 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.inputbut = new System.Windows.Forms.Button();
+            this.outputbut = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -685,6 +687,8 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.MintCream;
+            this.tabPage3.Controls.Add(this.outputbut);
+            this.tabPage3.Controls.Add(this.inputbut);
             this.tabPage3.Controls.Add(this.label18);
             this.tabPage3.Controls.Add(this.label17);
             this.tabPage3.Controls.Add(this.clear);
@@ -707,6 +711,26 @@
             this.tabPage3.Size = new System.Drawing.Size(515, 557);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Конвертер";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label18.Location = new System.Drawing.Point(331, 330);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(111, 22);
+            this.label18.TabIndex = 17;
+            this.label18.Text = "Транспорт :";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.Location = new System.Drawing.Point(12, 418);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(97, 22);
+            this.label17.TabIndex = 16;
+            this.label17.Text = "Топливо : ";
             // 
             // clear
             // 
@@ -861,25 +885,25 @@
             this.textBox3.TabIndex = 0;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label17
+            // inputbut
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(12, 418);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(97, 22);
-            this.label17.TabIndex = 16;
-            this.label17.Text = "Топливо : ";
+            this.inputbut.Location = new System.Drawing.Point(360, 117);
+            this.inputbut.Name = "inputbut";
+            this.inputbut.Size = new System.Drawing.Size(121, 39);
+            this.inputbut.TabIndex = 18;
+            this.inputbut.Text = "Считать из файла";
+            this.inputbut.UseVisualStyleBackColor = true;
+            this.inputbut.Click += new System.EventHandler(this.inputbut_Click);
             // 
-            // label18
+            // outputbut
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(331, 330);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(111, 22);
-            this.label18.TabIndex = 17;
-            this.label18.Text = "Транспорт :";
+            this.outputbut.Location = new System.Drawing.Point(47, 118);
+            this.outputbut.Name = "outputbut";
+            this.outputbut.Size = new System.Drawing.Size(121, 37);
+            this.outputbut.TabIndex = 19;
+            this.outputbut.Text = "Запись в файл";
+            this.outputbut.UseVisualStyleBackColor = true;
+            this.outputbut.Click += new System.EventHandler(this.outputbut_Click);
             // 
             // Form1
             // 
@@ -968,6 +992,8 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button outputbut;
+        private System.Windows.Forms.Button inputbut;
     }
 }
 

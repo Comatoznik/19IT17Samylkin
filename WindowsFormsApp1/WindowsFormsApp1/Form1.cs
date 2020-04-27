@@ -545,7 +545,7 @@ namespace WindowsFormsApp1
                     ras = ras * 0.7;
                 if (checkBox2.Checked)
                     ras = ras * 1.20;
-                textBox4.Text = Math.Round((ras / input) * fuel).ToString();
+                textBox4.Text = Math.Round(((ras/100) * input) * fuel).ToString();
             }
             catch(FormatException)
             {
@@ -562,6 +562,24 @@ namespace WindowsFormsApp1
             checkBox2.Checked = false;
             listBox1.SelectedItem = default;
             listBox2.SelectedItem = default;
+        }
+
+        private void outputbut_Click(object sender, EventArgs e)
+        { // Запись результата
+            FileStream file = new FileStream("C:\\output.txt", FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(file);
+            writer.Write("Стоимость поездки: " + textBox4.Text);
+            writer.Close();
+
+        }
+
+        private void inputbut_Click(object sender, EventArgs e)
+        { // Считывание исходных данных
+            FileStream file = new FileStream("C:\\input.txt", FileMode.OpenOrCreate, FileAccess.Read);
+            StreamReader reader = new StreamReader(file);
+            textBox3.Text = reader.ReadToEnd();
+            reader.Close();
+
         }
     }
 }
